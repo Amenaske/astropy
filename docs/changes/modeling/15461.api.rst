@@ -1,0 +1,1 @@
+Removal of deprecated code `_model_to_fit_params`` from ``fitting.py``.
