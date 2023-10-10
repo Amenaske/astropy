@@ -2104,14 +2104,6 @@ def model_to_fit_params(model):
     return model_params, fitparam_indices, model_bounds
 
 
-@deprecated(
-    since="5.1",
-    message="private method: _model_to_fit_params has been made public now",
-)
-def _model_to_fit_params(model):
-    return model_to_fit_params(model)
-
-
 def _validate_constraints(supported_constraints, model):
     """Make sure model constraints are supported by the current fitter."""
     message = "Optimizer cannot handle {0} constraints."
