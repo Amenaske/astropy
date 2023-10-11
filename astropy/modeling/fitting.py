@@ -32,7 +32,6 @@ from importlib.metadata import entry_points
 import numpy as np
 
 from astropy.units import Quantity
-from astropy.utils.decorators import deprecated
 from astropy.utils.exceptions import AstropyUserWarning
 
 from .optimizers import DEFAULT_ACC, DEFAULT_EPS, DEFAULT_MAXITER, SLSQP, Simplex
@@ -2055,14 +2054,6 @@ def fitter_to_model_params(model, fps, use_min_max_bounds=True):
                 # need to be updated after each iteration.
                 parameters[slice_] = value
                 model._array_to_parameters()
-
-
-@deprecated(
-    since="5.1",
-    message="private method: _fitter_to_model_params has been made public now",
-)
-def _fitter_to_model_params(model, fps):
-    return fitter_to_model_params(model, fps)
 
 
 def model_to_fit_params(model):
